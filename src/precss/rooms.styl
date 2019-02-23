@@ -1,0 +1,58 @@
+.rooms
+  text-align: center
+  background-color: #f8f8f8
+  padding 2em 0
+  .title
+    margin 0 0 .5em 0
+  .small__text
+    width: 630px
+    margin 0 auto
+    p
+      text-align: center
+      color: #858585
+      line-height: 24px
+      font-size: rem(16px)
+  &__slider
+    margin 1em 0
+    > div
+      &:hover
+        .caption
+          border-color $activeTextColor
+    &-img
+      display: block
+      line-height 0
+      img
+        height: 100%
+      a
+        display: inline-block
+    .caption
+      transition: all 300ms ease
+      background-color: #ffffff
+      text-align: left
+      padding 1em 1.5em 1.5em 1.5em
+      border-left 1px solid #ffffff
+      border-right 1px solid #ffffff
+      border-bottom 1px solid #ffffff
+      &__name
+        font-size rem(24px)
+        a
+          color: #1c1c1c
+          &:hover
+            color $activeTextColor
+      &__price
+        font-weight bold
+        margin .6em 0 .8em 0
+      &__text
+        color: #858585
+        p
+          font-size rem(14px)
+          line-height: 22px
+    .owl-nav
+      margin: 0
+      .owl-prev, .owl-next
+        position: absolute
+        top calc(50% - 21px)
+      .owl-prev
+        left: 0
+      .owl-next
+        right: 0

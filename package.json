@@ -1,0 +1,37 @@
+{
+  "name": "20170526",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.4.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-stylus": "~2.1.0",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-uglify": "~1.4.2",
+    "gulp.spritesmith": "^4.0.0",
+    "merge-stream": "~1.0.0",
+    "natives": "^1.1.6",
+    "smart-grid": "^1.1.0",
+    "stylus-type-utils": "0.0.3"
+  },
+  "resolutions": {
+    "natives": "1.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "gulp-babel": "^8.0.0",
+    "nib": "^1.1.2"
+  }
+}

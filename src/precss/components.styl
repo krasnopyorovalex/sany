@@ -1,0 +1,207 @@
+.icon
+  fill: #ffffff
+  display: inline-block
+  vertical-align: middle
+  &:hover
+    fill: $activeTextColor
+img
+  width: 100%
+  height: auto
+.owl-theme
+  .owl-nav.disabled + .owl-dots
+    margin: 0
+.btn
+  //box-shadow: 0 1px 21px rgba(28, 28, 28, 0.13)
+  background-color: $bgColor
+  display: inline-block
+  color #1c1c1c
+  padding 10px 35px
+  position: relative
+  &:after
+    transition: all 300ms ease
+    position: absolute
+    content: ""
+    top: 4px
+    bottom: 4px
+    right: 4px
+    left: 4px
+    border: 1px solid #ffffff
+    opacity 0
+  &:hover
+    cursor: pointer
+    color #ffffff
+    &:after
+      opacity 1
+.hidden
+  display: none
+table
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent
+table th,table td
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #272727
+table thead th
+  vertical-align: bottom;
+  //border-bottom: 2px solid #272727
+table tbody + tbody
+  border-top: 2px solid #272727
+table th, table td
+  border: 1px solid #272727
+.notify
+  position: fixed
+  display: none
+  right: 0
+  top: 20%
+  width: 320px
+  border-top 3px solid $mainColor
+  box-shadow 0 1px 4px #373737
+  background-color: #ebebeb
+  z-index 30
+  .close
+    position: absolute
+    width: 15px
+    height: 15px
+    right: 5px
+    top: 5px
+  > div
+    padding: 1.5em 2em 1em 1em
+    font-size rem(17px)
+.is__sent
+  position: relative
+  &:after
+    position: absolute
+    content ""
+    left: calc(50% - 16px)
+    top: 2px
+    border-radius: 50%
+    width: 33px
+    height: 33px
+    z-index 10
+    border-top: 3px solid #eee
+    border-right: 3px solid #eee
+    border-bottom: 3px solid #eee
+    border-left: 3px solid #c1bebe
+    transform: translateZ(0)
+    animation: load8 1.1s infinite linear
+  button[type=submit]
+    color #ffffff
+    &:hover
+      color $mainColor
+@-webkit-keyframes load8
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+@keyframes load8
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+@keyframes animate-circle
+  from
+    transform: scale(0)
+    opacity: 1
+  to
+    transform: scale(1)
+    opacity: 0
+.icon__calendar
+  display: inline-block
+  sprite($icon_calendar)
+.prev__item, .next__item
+  font-weight: 400
+  color #000
+  text-transform: uppercase
+  position: relative
+  display: inline-block
+  transition none
+  padding 2em 0
+  max-width: 300px
+  md-block({
+    font-size: rem(12px)
+    max-width: 180px
+  })
+  sm-block({
+    font-size: 0
+    padding: 0
+  })
+  &:after
+    position: absolute
+    content ""
+    top: calc(50% - 25px)
+    sprite($icon_arrow_project)
+    sm-block({
+      display: none
+    })
+  &:before
+    position: absolute
+    content ""
+    top: calc(50% - 25px)
+    display: none
+    sprite($icon_arrow_project_mob)
+    sm-block({
+      display: block
+    })
+  &:hover
+    color #00cc45
+    &:after
+      sprite($icon_arrow_project_active)
+  span
+    width: 80px
+    display: none
+    sm-block({
+      display: inline-block
+    })
+    &:before
+      content: attr(data-text)
+      sm-block({
+        font-size: rem(12px)
+      })
+.responsive
+  max-width 320px
+  margin 0 1em 1em 0
+  float: left
+  xs-block({
+    margin: 1em auto
+    width: 100%
+    float: none
+    display: block
+  })
+.table__box
+  overflow-x auto
+.loader__bg
+  position: fixed
+  z-index 35
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  background-color: #fff
+.loader
+  position: fixed
+  z-index 40
+  top: 50%
+  left: 50%
+  height: 10rem
+  width: 10rem
+  transform: translateX(-50%) translateY(-50%)
+  > .circle
+    position: absolute
+    height: inherit
+    width: inherit
+    background:$bgColor
+    border-radius: 50%
+    animation: animate-circle 2s cubic-bezier(.9,.24,.62,.79) infinite
+    &:nth-of-type(1)
+      animation-delay: 0
+    &:nth-of-type(2)
+      animation-delay: calc(2s / -3)
+    &:nth-of-type(3)
+      animation-delay: calc(2s / -6)
+.prev-arrow, .next-arrow
+  sprite($icon_arrow)
+  display: inline-block
+.prev-arrow
+  transform rotate(180deg)

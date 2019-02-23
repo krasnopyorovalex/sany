@@ -1,0 +1,43 @@
+.main__slider
+  .owl-item
+    .main__slider-img
+      position: relative
+      img
+        width: 100%
+      &:after
+        content ""
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        background-color: rgba(0,0,0,.3)
+        z-index 0
+    .caption
+      position: absolute
+      text-align: center
+      top: 32%
+      width: 100%
+      &__text
+        z-index 10
+        color: #ffffff
+        font-size rem(65px)
+      &__btn
+        margin-top: 2em
+        .btn
+          box-shadow: 0 1px 21px rgba(28, 28, 28, 0.13)
+          color: #1c1c1c
+          padding 14px 40px
+          text-transform: uppercase
+          &:hover
+            color: #ffffff
+  .owl-dots
+    position: absolute
+    bottom: 1em
+    width: 100%
+    text-align: center
+    .owl-dot
+      &.active
+        span
+          background: none
+          border: 2px solid #ffffff

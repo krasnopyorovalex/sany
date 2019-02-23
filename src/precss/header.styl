@@ -1,0 +1,126 @@
+.header
+  background-color: #ffffff
+  color: #1c1c1c
+  box-shadow 0 3px 7px rgba(133,133,133,.25)
+  .middle__block
+    border-left: 1px solid #eaeaea
+  &__logo
+    img
+      width: auto
+  &__contacts
+    padding .5em 0 .5em 1.5em
+    color: #858585
+    display: flex
+    align-items center
+    flex-wrap wrap
+    .icon
+      vertical-align: top
+      display: inline-block
+      width: 16px
+      height: 16px
+      margin: 0 5px 0 0
+      fill: #858585
+    &-socials
+      text-align: right
+      a
+        display: inline-block
+        & + a
+          margin: 0 0 0 5px
+    &-items
+      flex-grow: 1
+      > div
+        display: inline-block
+        font-size rem(14px)
+        &:hover
+          .icon:not(.icon__address)
+            fill: $activeTextColor
+          a
+            color: $activeTextColor
+        a
+          color: #858585
+        .icon
+          margin 0 5px 0 0
+        .icon__address
+          width: 18px
+          height: 18px
+        & + div
+          margin-left: 1em
+  &__menu
+    padding 0 0 0 1em
+    border-top: 1px solid #eaeaea
+    display: flex
+    flex-wrap wrap
+    align-items center
+    .btn__booking
+      padding 1em 25px
+      text-transform: uppercase
+    > ul
+      flex-grow 1
+      z-index 10
+      > li
+        display: inline-block
+        position: relative
+        & + li
+          margin-left: 2em
+        &.has__child
+          &:after
+            content ""
+            display: inline-block
+            margin-left: 2px
+            sprite($icon_arrow_menu_down)
+          ul
+            border-top: 2px solid $activeTextColor
+            background-color: #f8f8f8
+            position: absolute
+            top: 25px
+            left: 0
+            padding .5em 0
+            box-shadow 0 3px 7px rgba(0,0,0,.35)
+            min-width 260px
+            display: none
+            li
+              display: block
+              width: 100%
+              a
+                color: #1c1c1c
+                font-size: rem(14px)
+                text-transform: uppercase
+                position: relative
+                padding .6em 1em
+                display: block
+                width: 100%
+                &:hover
+                  background-color: #eaeaea
+                  text-decoration: underline
+              & + li
+                border-top: 1px solid #eaeaea
+          &:hover
+            ul
+              display: block
+        &.active
+          a
+            color $activeTextColor
+            &:before
+              opacity: 1
+              width: 60%
+        > a
+          color: #1c1c1c
+          font-size: rem(18px)
+          text-transform: uppercase
+          position: relative
+          padding 1em 0
+          &:before
+            transition: all 300ms ease
+            opacity 0
+            position: absolute
+            content ""
+            top: 1px
+            width: 20%
+            left: 20%
+            height 3px
+            background-color: $activeTextColor
+          &:hover
+            color $activeTextColor
+            &:before
+              opacity: 1
+              width: 60%

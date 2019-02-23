@@ -1,0 +1,129 @@
+flex-version = flex
+vendor-prefixes = official
+@import "nib"
+@import "smart-grid"
+@import "type-utils"
+@import "fonts"
+@import "sprite"
+
+base-font-size = 16px
+support-for-ie = false
+
+$textColor = #858585
+$activeTextColor = #7eb71c
+$bgColor = #febd11
+
+reset()
+
+//.debug
+//  z-index 10
+//  debug(rgba(0,0,0,0.4), 1px solid #ff0)
+*,*::before,*::after
+  box-sizing: border-box
+body
+  font-family "Roboto Condensed"
+  position: relative
+  background-color: #fff
+a, .icon
+  text-decoration:none
+  color: $activeTextColor
+  cursor:pointer
+  transition: all 300ms ease
+a:hover,a:focus,a:visited
+  text-decoration:none
+  outline:none
+p
+  margin 0 0 15px 0
+  text-align justify
+  font-size rem(16px)
+  line-height normal
+h1, .as__h1, h2, .as__h2, h3, .as__h3, h4, .as__h4, h5, .as__h5
+  md-block({
+    font-size: rem(24px)
+  })
+h2, .as__h2
+  font-size: rem(32px)
+  md-block({
+    font-size: rem(22px)
+  })
+h3, .as__h3
+  font-size: rem(28px)
+  md-block({
+    font-size: rem(20px)
+  })
+h4, .as__h4
+  font-size: rem(24px)
+  md-block({
+    font-size: rem(18px)
+  })
+h5, .as__h5
+  font-size: rem(20px)
+  md-block({
+    font-size: rem(16px)
+  })
+svg
+  width: 0
+  height: 0
+section
+  position: relative
+.title
+  font-size rem(34px)
+  position: relative
+  display: inline-block
+.container
+  wrapper()
+.row
+  row-flex()
+  justify-content center
+  align-items center
+  .col-12
+    size(12)
+  .col-11
+    size(11)
+  .col-10
+    size(10)
+  .col-9
+    size(9)
+  .col-8
+    size(8)
+  .col-7
+    size(7)
+  .col-6
+    size(6)
+  .col-5
+    size(5)
+  .col-4
+    size(4)
+  .col-3
+    size(3)
+  .col-3
+    size(3)
+  .col-2
+    size(2)
+  .col-1
+    size(1)
+  [class*=col-]
+    col()
+    size-xs(12)
+@import "header"
+@import "slider"
+@import "404"
+@import "breadcrumbs"
+@import "footer"
+@import "forms"
+@import "mobile-menu"
+@import "css/owl.carousel.min"
+@import "css/owl.theme.default.min"
+@import "css/lightbox"
+@import "components"
+@import "advantages"
+@import "rooms"
+@import "pagination"
+@import "guestbook"
+
+button
+  outline none
+  border none
+button::-moz-focus-inner
+  outline: none
+  border 0
