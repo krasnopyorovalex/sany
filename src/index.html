@@ -460,10 +460,62 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="btn__see-all">
+                        <a href="#" class="btn">Читать все отзывы</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="loader__bg"></div><div class="popup__show-bg"></div><div class="notify"></div>
+    <section class="booking">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" class="check__availability">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="check__availability-name">
+                                    Узнать стоимость
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <div class="single__block">
+                                    <label for="date_in">Дата приезда:</label>
+                                    <input type="text" name="date_in" id="date_in" class="date_in" autocomplete="off" required>
+                                    <i class="icon icon__calendar"></i>
+                                </div>
+                                <div class="single__block">
+                                    <label for="date_out">Дата выезда:</label>
+                                    <input type="text" name="date_out" id="date_out" class="date_out" autocomplete="off" required>
+                                    <i class="icon icon__calendar"></i>
+                                </div>
+                                <div class="single__block">
+                                    <label for="name">Имя:</label>
+                                    <input type="text" name="name" id="name" autocomplete="off" required>
+                                </div>
+                                <div class="single__block">
+                                    <label for="phone">Телефон:</label>
+                                    <input type="text" name="phone" id="phone" class="phone__mask" autocomplete="off" required>
+                                </div>
+                                <div class="single__block">
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" name="email" id="email" autocomplete="off" required>
+                                </div>
+                                <div class="single__block submit is__sent">
+                                    <button type="submit" class="btn">Узнать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="loader__bg"></div><div class="notify"></div>
 
     <script src="js/jquery.3.3.1.min.js"></script>
     <script src="js/app.min.js"></script>

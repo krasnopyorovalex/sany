@@ -107,23 +107,25 @@ section
   [class*=col-]
     col()
     size-xs(12)
-@import "header"
-@import "slider"
-@import "404"
-@import "breadcrumbs"
-@import "footer"
-@import "forms"
-@import "mobile-menu"
+@import "css/lightbox"
 @import "css/owl.carousel.min"
 @import "css/owl.theme.default.min"
-@import "css/lightbox"
+@import "css/datepicker.min"
+@import "header"
+@import "mobile-menu"
+@import "slider"
+@import "breadcrumbs"
+@import "forms"
+@import "footer"
+@import "404"
 @import "components"
 @import "advantages"
 @import "rooms"
 @import "services"
 @import "guest"
+@import "booking"
+@import "icons"
 @import "pagination"
-@import "guestbook"
 
 button
   outline none
@@ -131,3 +133,5 @@ button
 button::-moz-focus-inner
   outline: none
   border 0
+input::placeholder, textarea::placeholder
+  color #ffffff

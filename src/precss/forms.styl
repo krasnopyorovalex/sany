@@ -1,99 +1,3 @@
-.styled__checkbox, .filter__block
-  z-index 10
-  label
-    display: inline-block
-    vertical-align: middle
-    margin-left: 8px
-    &:hover
-      cursor: pointer
-    &:before
-      box-sizing border-box
-      transition: all 300ms ease
-      border: 1px solid #c1bebe
-      background-color: #ffffff
-      content: ''
-      width: 16px
-      height: 16px
-      left: 0
-      position: absolute
-      top: 3px
-input[type="checkbox"]
-  margin-left: 0
-  opacity: 0
-  width: auto
-  height: auto
-  &:checked + label:before
-    background-color: $mainColor
-  &:checked + label:after
-    box-sizing border-box
-    position: absolute
-    content ""
-    border 2px solid #ffffff
-    height: 12px
-    width: 12px
-    left: 2px
-    top: 5px
-.form__order
-  background-color: #666666
-  padding: 1.8em
-  margin 0 auto
-  max-width: 360px
-  position: relative
-  md-block({
-    margin: 1em auto 0 auto
-  })
-  xs-block({
-    margin: 1em .4em
-  })
-  &:after
-    position: absolute
-    content ""
-    border: 1px solid rgba(255,255,255,.4)
-    top: .5em
-    bottom: .5em
-    left: .5em
-    right: .5em
-    z-index 0
-  &.guestbook
-    .single__block
-      .title
-        margin: 0
-        color #fff
-        font-size rem(17px)
-        &:after
-          border-bottom 1px solid rgba(255,255,255,.4)
-          background: none
-          width: 100%
-          left: 0
-          bottom: -.2em
-      .sub__title
-        text-transform: none
-        color #fff
-        font-size rem(14px)
-      textarea
-        height: 100px
-  .single__block
-    .icon
-      position: absolute
-      top: 18px
-      left: 16px
-    .email
-      top: 20px
-      sprite($icon_phone_mail)
-    .phone
-      sprite($icon_phone_green)
-    .btn
-      font-size: rem(17px)
-      color: #ffffff
-      width: 200px
-      padding 15px 25px
-      &:hover
-        cursor: pointer
-  .submit
-    margin 2em 0 0 0
-    display: block
-.human
-  sprite($icon_human_green)
 form
   .error
     display: none
@@ -105,26 +9,16 @@ form
   .single__block
     z-index 10
     position: relative
-    margin 0 0 10px 0
-    .title
-      color: #000000
-      font-size: rem(22px)
-      margin: 0 0 1em 0
-      padding: 0
-      font-weight: 500
-      line-height: 22px
-      text-transform: uppercase
-      &:after
-        display: none
+    display: inline-block
     &.is__sent
       button[type=submit]
-        color $mainColor
+        color #1c1c1c
         &:after
           display: none
         &:hover
-          color $mainColor
+          color #1c1c1c
       &:after
-        top: 8px
+        top: 7px
     &.i__agree
       input
         display: inline-block
@@ -138,88 +32,45 @@ form
         color: #ffffff
         margin: 0
         font-size: rem(14px)
-        &:after, &:before
-          display: none
     input, textarea
       border none
       box-sizing border-box
       width: 100%
       background-color: #ffffff
-      padding 15px 10px 15px 40px
-    textarea
-      padding 15px
 input, textarea
   &:focus::placeholder
     color transparent
-.search
-  display: none
-  margin 5px 0
-  .single__block
-    input
-      padding 10px 15px
-    .search
-      width: 17px
-      height: 17px
-      position: absolute
-      right: 12px
-      top: 8px
-      fill #272727
-.popup__show-bg
-  background-color: rgba(0,0,0,0.7)
-  position: fixed
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
-  z-index 22
-  display: none
-.popup
-  display: none
-  position: fixed
-  top 14%
-  left 0
-  padding: 0 2%
-  right: 0
-  z-index 25
-  sm-block({
-    top: 0
-  })
-  .form__order
-    background-color: #ffffff
-    .error
-      color: #000
-      bottom: -2.5em
-    .single__block
-      .title
-        xs-block({
-          font-size: rem(16px)
-        })
-      input, textarea
-        border: 1px solid #cacaca
-        background-color: #f6f6f6
-      &.i__agree
-        label
-          color: #474747
-  .close__box
-    display: block
-    position: relative
-    width: 100%
-    z-index 20
-    .close
-      padding 5px
-      position: absolute
-      right: -1em
-      top: -1em
-      sprite($icon_close)
-      &:hover
-        cursor: pointer
-.select__arrow
-  sprite($icon_arrow_black)
-  transform rotate(180deg)
-  right: 15px
-  top: 18px
-  position: absolute
-form
-  .i__agree
-    input[type=checkbox]
-      padding: 7px
+.is__sent
+  position: relative
+  &:after
+    position: absolute
+    content ""
+    left: calc(50% - 13px)
+    top: 2px
+    border-radius: 50%
+    width: 26px
+    height: 26px
+    z-index 10
+    border-top: 3px solid #eee
+    border-right: 3px solid #eee
+    border-bottom: 3px solid #eee
+    border-left: 3px solid #c1bebe
+    transform: translateZ(0)
+    animation: load8 1.1s infinite linear
+@-webkit-keyframes load8
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+@keyframes load8
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+@keyframes animate-circle
+  from
+    transform: scale(0)
+    opacity: 1
+  to
+    transform: scale(1)
+    opacity: 0

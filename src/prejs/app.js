@@ -30,25 +30,6 @@ jQuery(document).ready(function() {
     //     });
     // }
 
-    var callPopup = jQuery(".call__popup");
-    if(callPopup.length) {
-        var popupBg = jQuery(".popup__show-bg");
-        callPopup.on("click", function (e) {
-            e.preventDefault();
-            var _this = jQuery(this),
-                popup = jQuery("#" + _this.attr("data-target")),
-                service = _this.attr("data-service");
-            if(typeof service !== 'undefined' && service.length){
-                popup.find('input[name=service]').val(service);
-            }
-
-            return popup.fadeIn() && popupBg.show();
-        });
-        jQuery(".popup").on("click", ".close", function () {
-            return jQuery(this).closest(".popup").fadeOut("slow") && popupBg.fadeOut();
-        });
-    }
-
     var tabs = jQuery(".tabs");
     if(tabs.length){
         tabs.lightTabs();
@@ -62,6 +43,49 @@ jQuery(document).ready(function() {
 
     lightbox.option({
         'albumLabel': 'Изображение %1 из %2'
+    });
+
+    /*
+    |-----------------------------------------------------------
+    |   custom datepicker
+    |-----------------------------------------------------------
+    */
+    var arrival_date = jQuery('input.date_in'),
+        departure_date = jQuery('input.date_out'),
+        tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+
+    departure_date.datepicker({
+        'autoClose': true,
+        'dateFormat': 'dd.mm.yyyy',
+        'minDate': tomorrow
+    });
+
+    arrival_date.datepicker({
+        'autoClose': true,
+        'dateFormat': 'dd.mm.yyyy',
+        'minDate': new Date(),
+        onSelect: function (fd, date) {
+            if(date){
+                var change_date = new Date(date.getTime()),
+                    departure_date_val = departure_date.val().split('.');
+
+                departure_date_val = new Date(
+                    parseInt(departure_date_val[2]),
+                    parseInt(departure_date_val[1]) - 1,
+                    parseInt(departure_date_val[0])
+                );
+                departure_date.data('datepicker').update('minDate', new Date(date.getTime() + 24*60*60*1000));
+
+                if(departure_date_val <= change_date){
+                    return departure_date.val('');
+                }
+            }
+            return true;
+        }
+    });
+
+    form.on('click', '.zmdi-calendar-note', function () {
+        return jQuery(this).closest('div').find('label').click();
     });
 
     /*
