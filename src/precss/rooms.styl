@@ -1,11 +1,14 @@
 .rooms
   text-align: center
   background-color: #f8f8f8
-  padding 2em 0
+  padding 3em 0
+  xs-block({
+    padding: 1em 0
+  })
   .title
     margin 0 0 .5em 0
   .small__text
-    width: 630px
+    max-width: 630px
     margin 0 auto
     p
       text-align: center
@@ -36,6 +39,7 @@
       &__name
         font-size rem(24px)
         a
+          font-family: 'Playfair Display'
           color: #1c1c1c
           &:hover
             color $activeTextColor

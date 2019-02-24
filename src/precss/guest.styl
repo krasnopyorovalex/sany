@@ -1,0 +1,35 @@
+.guest
+  text-align: center
+  padding 3em 0
+  background-color: #f8f8f8
+  .col-4
+    align-self flex-start
+  &__footer
+    display: flex
+    flex-wrap wrap
+    margin: 1.5em 0 0 0
+    justify-content center
+    &-name
+      &:after
+        content ", "
+    &-date
+      margin-left: 5px
+  &__text
+    p
+      color #858585
+      font-size rem(15px)
+      line-height 22px
+      position: relative
+      margin 0 20px
+      &:after
+        content: '„'
+        line-height 0
+        margin-left: 10px
+        font-size: rem(40px)
+      &:before
+        position: absolute
+        content: '“'
+        top: 0
+        left: -20px
+        font-size: rem(40px)
+

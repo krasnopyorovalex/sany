@@ -1,0 +1,33 @@
+.services
+  padding 3em 0
+  xs-block({
+    padding: 1em 0
+  })
+  .name
+    a
+      font-family: 'Playfair Display'
+      color #1c1c1c
+      &:hover
+        color $activeTextColor
+  .btn__more
+    font-size rem(14px)
+    position: relative
+    text-transform: uppercase
+    color #1c1c1c
+    font-weight bold
+    &:after
+      opacity 0
+      transition: all 300ms ease
+      content ""
+      position: absolute
+      height 1px
+      width: 100%
+      bottom: -2px
+      left: 0
+      background-color: $activeTextColor
+     &:hover
+       color: $activeTextColor
+       &:after
+        opacity 1
+  .btn__see-all
+    margin 2em 0 1em 0

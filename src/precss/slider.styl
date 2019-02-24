@@ -18,17 +18,36 @@
       text-align: center
       top: 32%
       width: 100%
+      sm-block({
+        top: 20%
+      })
+      xs-block({
+        top: 10%
+      })
       &__text
         z-index 10
         color: #ffffff
+        font-family: 'Playfair Display'
         font-size rem(65px)
+        sm-block({
+          font-size: rem(34px)
+        })
+        xs-block({
+          font-size: rem(24px)
+        })
       &__btn
         margin-top: 2em
+        xs-block({
+          margin-top: 1em
+        })
         .btn
           box-shadow: 0 1px 21px rgba(28, 28, 28, 0.13)
           color: #1c1c1c
-          padding 14px 40px
+          padding 14px 50px
           text-transform: uppercase
+          xs-block({
+            padding: 8px 30px
+          })
           &:hover
             color: #ffffff
   .owl-dots
@@ -36,6 +55,9 @@
     bottom: 1em
     width: 100%
     text-align: center
+    xs-block({
+      bottom: .1em
+    })
     .owl-dot
       &.active
         span
