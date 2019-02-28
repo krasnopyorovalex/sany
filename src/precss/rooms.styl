@@ -40,7 +40,7 @@
         font-size rem(24px)
         a
           font-family: 'Playfair Display'
-          color: #1c1c1c
+          color: $textColor
           &:hover
             color $activeTextColor
       &__price
@@ -60,3 +60,45 @@
         left: 0
       .owl-next
         right: 0
+.rooms__list
+  margin 2em 0
+  color $textColor
+  &-item
+    display: flex
+    flex-wrap wrap
+    row-flex()
+    align-items center
+    position: relative
+    &:after
+      content ""
+      z-index -1
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 1%
+      background-color: #f8f8f8
+    & + .rooms__list-item
+      margin-top: 2em
+    &-img
+      col()
+      size(6)
+      size-sm(12)
+      line-height 0
+    &-text
+      col()
+      size(6)
+      size-sm(12)
+      align-self flex-start
+      .name
+        color: $textColor
+        font-family: 'Playfair Display'
+        font-size rem(30px)
+        &:hover
+          color $activeTextColor
+      .price
+        margin .8em 0
+        font-size rem(18px)
+        font-weight bold
+      .buttons
+        margin 1em 0 0 0

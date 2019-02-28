@@ -1,34 +1,47 @@
-.tabs>ul
-  margin:0
-  padding:0
-.tabs>ul:after
-  content:""
-  display: block
-  clear:both
 .tabs>ul li
-  cursor:pointer;
-  display:block;
-  float:left;
-  padding:10px 15px;
-  background:#d6d6d7
-  color: #2b2b2b
-  + li
-    border-left: 1px solid #fff
-  &:first-child
-    border-top-left-radius 5px
-  &:last-child
-    border-top-right-radius 5px
+  cursor:pointer
+  padding:10px 0 10px 15px
+  text-transform: uppercase
+  font-family: "Playfair Display"
+  position: relative
+  &:after
+    content ""
+    position: absolute
+    transition: all 300ms ease
+    background-color: #c19b76
+    width: 1px
+    height: 100%
+    right: -13px
+    z-index 10
+    top: 0
+    opacity 0
 .tabs>ul li.active, .tabs>ul li.active:hover
-  background: $mainColor
-  color:#fff
+  color:$activeTextColor
+.tabs>ul li.active
+  &:after
+    opacity 1
 .tabs>ul li:hover
-  background:#d6d6d7
+  color:$activeTextColor
 .tabs
-  margin-top: 1em
-  margin-bottom: 1em
+  row-flex()
+  align-items stretch
+  margin-bottom 1em
+  ul
+    col()
+    size(3)
 .tabs > div
-  background-color: #fff
+  col()
+  size(9)
+  position: relative
+  &:before
+    background-color: #dadada
+    height: 100%
+    width: 1px
+    content ""
+    position: absolute
+    left: -1%
+    right: 0
   > div
-    padding 1em 1em .2em 1em
+    padding 15px
     p
       text-align: left

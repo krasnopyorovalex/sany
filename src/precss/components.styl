@@ -7,7 +7,7 @@ img
 .btn
   background-color: $bgColor
   display: inline-block
-  color #1c1c1c
+  color $textColor
   padding 10px 35px
   position: relative
   &:after
@@ -32,16 +32,23 @@ table
   max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent
+  text-align: center
 table th,table td
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #272727
+  border-top: 1px solid #dadada
 table thead th
-  vertical-align: bottom;
+  vertical-align: bottom
+  text-align: center
 table tbody + tbody
-  border-top: 2px solid #272727
+  border-top: 2px solid #dadada
 table th, table td
-  border: 1px solid #272727
+  border: 1px solid #dadada
+.page__text
+  margin 2em 0
+  xs-block({
+    margin: 1em 10px
+  })
 .notify
   position: fixed
   display: none
@@ -156,3 +163,25 @@ table th, table td
   display: inline-block
 .prev-arrow
   transform rotate(180deg)
+figure
+  margin: 0
+  padding: 0
+.content
+  ul
+    padding-left: 1em
+    li
+      position: relative
+      &:before
+        content ""
+        position: absolute
+        left: -.8em
+        top: 7px
+        display: inline-block
+        width: 5px
+        height: 5px
+        border-radius 50%
+        background-color: $activeTextColor
+      & + li
+        margin-top: 5px
+.page__content
+  margin 2em 0

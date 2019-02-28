@@ -1,0 +1,50 @@
+.list__items
+  > div
+    position: relative
+    &:after
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 1%
+      left: 1%
+      content ""
+      background-color: #f8f8f8
+      z-index -1
+    row-flex()
+    align-items center
+    > div
+      col()
+      margin-bottom 2em
+      &:first-child
+        size(5)
+        size-md(12)
+      &:nth-child(2)
+        size(7)
+        size-md(12)
+      xs-block({
+        margin-bottom: 1em
+      })
+      &.img
+        line-height 0
+      .name
+        font-family: "Playfair Display"
+        color $textColor
+        font-size rem(24px)
+        margin 0.2em 0 0.5em 0
+        display: block
+      p
+        color $textDescColor
+.sb__list
+  margin 2em 0 1em 0
+  .guest__box
+    .title
+      font-size rem(24px)
+      margin: 0 0 .5em 0
+    &-item
+      margin 0 0 1em 0
+      p
+        margin: 0 0 5px 0
+        font-size rem(14px)
+        color: $textDescColor
+      .author
+        font-size rem(14px)

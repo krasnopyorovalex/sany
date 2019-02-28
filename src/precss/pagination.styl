@@ -1,19 +1,22 @@
 .pagination
   text-align: center
   margin 1em 0
+  width: 100%
+  display: block
   ul
+    padding: 0
     li
       display: inline-block
+      &:before
+        display: none
       &.active
         a, span
-          color: $textColor
+          color: $activeTextColor
       a, span
-        border: 1px solid #d9d6d6
+        border: 1px solid $textDescColor
         padding 5px 16px
-        color: #6c6c6c
+        color: $textColor
         font-size: rem(18px)
         font-weight: 400
-        &:after
-          display: none
         &:hover
-          color: $textColor
+          color: $activeTextColor

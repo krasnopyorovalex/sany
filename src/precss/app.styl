@@ -9,7 +9,8 @@ vendor-prefixes = official
 base-font-size = 16px
 support-for-ie = false
 
-$textColor = #858585
+$textDescColor = #858585
+$textColor = #1c1c1c
 $activeTextColor = #7eb71c
 $bgColor = #febd11
 
@@ -38,9 +39,13 @@ p
   font-size rem(16px)
   line-height normal
 h1, .as__h1, h2, .as__h2, h3, .as__h3, h4, .as__h4, h5, .as__h5
+  font-family: 'Playfair Display'
+  margin 0 0 .5em 0
   md-block({
     font-size: rem(24px)
   })
+h1, .as__h1
+  font-size: rem(34px)
 h2, .as__h2
   font-size: rem(32px)
   md-block({
@@ -61,11 +66,10 @@ h5, .as__h5
   md-block({
     font-size: rem(16px)
   })
-svg
-  width: 0
-  height: 0
 section
   position: relative
+.flex-start
+  align-self flex-start
 .title
   font-size rem(34px)
   position: relative
@@ -121,9 +125,14 @@ section
 @import "components"
 @import "advantages"
 @import "rooms"
+@import "room"
+@import "tabs"
 @import "services"
 @import "guest"
 @import "booking"
+@import "seo-text"
+@import "gallery"
+@import "list"
 @import "icons"
 @import "pagination"
 

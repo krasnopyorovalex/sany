@@ -1,0 +1,49 @@
+.gallery
+  padding 3em 0 0 0
+  background-color: #f8f8f8
+  .title
+    display: block
+    text-align: center
+.gallery__box
+  display: flex
+  flex-wrap: wrap
+  align-content center
+  figure
+    position: relative
+    box-sizing border-box
+    flex-basis 20%
+    xs-block({
+      flex-basis: 50%
+    })
+    &:after
+      background-color: rgba(0, 0, 0, 0.5)
+      position: absolute
+      content ""
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      transition: all 300ms ease
+      opacity 0
+    img
+      height: 100%
+    .icon
+      transition: all 300ms ease
+      width: 60px
+      height: 60px
+      display: inline-block
+      fill: #fff
+      position: absolute
+      top: calc(50% - 30px)
+      left: calc(50% - 30px)
+      background-color: $activeTextColor
+      padding 18px
+      border-radius 50%
+      opacity 0
+      z-index 10
+      cursor: pointer
+    &:hover
+      &:after
+        opacity 1
+      .icon
+        opacity 1

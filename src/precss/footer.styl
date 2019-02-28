@@ -1,4 +1,70 @@
 footer
+  padding 3em 0 1em 0
+  background-color: $textColor
+  color #fff
+  .title
+    font-size rem(26px)
+    &.right
+      text-align: right
+  .footer__socials
+    text-align: right
+    .icon
+      width: 18px
+      height: 18px
+  [class*=col-]
+    align-self flex-start
+  .flex-center
+    [class*=col-]
+      align-self center
+  .footer__menu
+    ul
+      li
+        margin 0 10px 10px 0
+        display: inline-block
+        a
+          color #ffffff
+          &:hover
+            color $activeTextColor
+  .footer__contacts, .footer__socials
+    a
+      color #ffffff
+    >div
+      &:hover
+        a
+          color $activeTextColor
+        .icon:not(.icon__address)
+          fill: $activeTextColor
+      & + div
+        margin 10px 0 0 0
+  .icon
+    vertical-align: top
+    display: inline-block
+    width: 16px
+    height: 16px
+    margin: 0 5px 0 0
+    fill: #fff
+  .copyright
+    text-align: left
+    color: #858585
+  .develop
+    text-align: right
+    &__link
+      display: inline-block
+      margin-right: 4px
+      a
+        font-size rem(12px)
+        color #ffffff
+        &:hover
+          color $activeTextColor
+    &__logo
+      display: inline-block
+      width: 130px
   md-block({
     text-align: center
   })
+.separator
+  margin 25px 0
+  display: inline-block
+  width: 100%
+  height 1px
+  background-color: rgba(236,236,236,.1)

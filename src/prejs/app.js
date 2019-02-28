@@ -5,6 +5,50 @@ jQuery(document).ready(function() {
         maskPhone.mask('+0 (000) 000-00-00', {placeholder: "+_ (___) ___-__-__"});
     }
 
+    var productGal = jQuery(".big__carousel");
+    if (productGal.length) {
+        productGal.owlCarousel({
+            loop:false,
+            margin:0,
+            nav:true,
+            dots:false,
+            items: 1
+        });
+
+        productGal.on('changed.owl.carousel', function(event) {
+            var index = event.item.index,
+                items = thumbs.find(".owl-item");
+            items.removeClass("current");
+            return thumbs.trigger('to.owl.carousel', index) && items.eq(index).addClass("current");
+        });
+
+        var thumbs = jQuery(".thumbs__carousel");
+        thumbs.owlCarousel({
+            items: 6,
+            margin:5,
+            nav:true,
+            dots:false,
+            responsive : {
+                0 : {
+                    items: 3
+                },
+                480 : {
+                    items: 3
+                },
+                768 : {
+                    items: 5
+                }
+            }
+        });
+        thumbs.on('click', 'img', function() {
+            var _this = jQuery(this),
+                index = _this.attr("data-index");
+            thumbs.find(".owl-item").removeClass("current");
+            return _this.closest(".owl-item").addClass("current") && productGal.trigger('to.owl.carousel', index);
+        });
+        thumbs.find(".owl-item").eq(0).addClass("current");
+    }
+
     var slider = jQuery('.main__slider');
     if (slider.length) {
         slider.owlCarousel({
@@ -57,7 +101,8 @@ jQuery(document).ready(function() {
     departure_date.datepicker({
         'autoClose': true,
         'dateFormat': 'dd.mm.yyyy',
-        'minDate': tomorrow
+        'minDate': tomorrow,
+        'position': 'bottom right'
     });
 
     arrival_date.datepicker({
@@ -84,7 +129,8 @@ jQuery(document).ready(function() {
         }
     });
 
-    form.on('click', '.zmdi-calendar-note', function () {
+    var form = jQuery('form');
+    form.on('click', '.icon__calendar', function () {
         return jQuery(this).closest('div').find('label').click();
     });
 

@@ -6,40 +6,66 @@ form
     bottom: -2em
     color #ebebeb
     font-size rem(13px)
-  .single__block
-    z-index 10
-    position: relative
-    display: inline-block
-    &.is__sent
-      button[type=submit]
-        color #1c1c1c
-        &:after
-          display: none
-        &:hover
-          color #1c1c1c
+.single__block
+  z-index 10
+  position: relative
+  display: inline-block
+  &.is__sent
+    button[type=submit]
+      color $textColor
       &:after
-        top: 7px
-    &.i__agree
-      input
-        display: inline-block
-        width: 14px
-        height: 14px
-        vertical-align: middle
-        margin 0 5px 0 0
+        display: none
+      &:hover
+        color $textColor
+    &:after
+      top: 7px
+  &.i__agree
+    input
+      margin-left: 0
+      display: none
+      &:checked + label:after
         opacity 1
-        outline none
-      label
-        color: #ffffff
-        margin: 0
-        font-size: rem(14px)
-    input, textarea
-      border none
-      box-sizing border-box
-      width: 100%
-      background-color: #ffffff
+    label
+      margin-left: 4px
+      color: #222
+      font-size: rem(14px)
+      position: relative
+      padding-left: 22px
+      &:after
+        width: 6px
+        height: 6px
+        background-color: $textColor
+        content ""
+        left: 5px
+        border-radius 50%
+        top: 10px
+        position: absolute
+        opacity 0
+      &:before
+        border: solid 1px $textColor
+        content: ''
+        font-size: 0
+        display: block
+        border-radius 50%
+        background: #fff
+        height: 16px
+        left: 0
+        position: absolute
+        top: 5px
+        width: 16px
+        text-align: center
+  input, textarea
+    border none
+    box-sizing border-box
+    width: 100%
+    background-color: #ffffff
 input, textarea
   &:focus::placeholder
     color transparent
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
 .is__sent
   position: relative
   &:after
@@ -74,3 +100,81 @@ input, textarea
   to
     transform: scale(1)
     opacity: 0
+.sb__booking-form
+  margin 2em 0
+  border: 1px solid $activeTextColor
+  .title
+    font-size rem(22px)
+    position: relative
+    display: block
+    text-align: center
+    margin 0.5em 0 1em 0
+    &:after
+      position: absolute
+      content ""
+      height: 1px
+      width 60%
+      bottom: -8px
+      left: 20%
+      background-color: $activeTextColor
+  .form__body
+    padding 1em
+  .single__block
+    color: $textColor
+    width: 100%
+    .icon__arrow
+      position: absolute
+      bottom: .7em
+      right: 0
+      display: inline-block
+      sprite($icon_arrow_black)
+      transform rotate(180deg)
+    & +.single__block
+      margin 20px 0 0 0
+    &.counts
+      display: flex
+      align-items: center
+      >div
+        width: 100%
+        position: relative
+        &:nth-child(2)
+          margin-left: 15px
+    &.submit
+      text-align: center
+      border-top 1px solid #c19b76
+      padding-top: 1em
+    &.date
+      display: flex
+      align-items: center
+      >div
+        position: relative
+        .icon__calendar
+          width: 18px
+          height: 18px
+          fill: #858585
+          position: absolute
+          right: 0
+          bottom: 6px
+        &:nth-child(2)
+          margin-left: 15px
+    label
+      display: block
+      color $textDescColor
+      font-size rem(14px)
+    select
+      background-color: #fff
+      border-left none
+      border-top none
+      border-right: none
+      &:active,&:focus
+        //border none
+        background: none
+    select, input, textarea
+      outline none
+      border-bottom 1px solid $activeTextColor
+      width: 100%
+      padding 5px 0
+    textarea
+      height: 50px
+    input::placeholder
+      color $textDescColor
