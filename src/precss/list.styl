@@ -21,6 +21,7 @@
       &:nth-child(2)
         size(7)
         size-md(12)
+        padding 0 1em
       xs-block({
         margin-bottom: 1em
       })
@@ -32,14 +33,28 @@
         font-size rem(24px)
         margin 0.2em 0 0.5em 0
         display: block
+        &:hover
+          color $activeTextColor
       p
         color $textDescColor
 .sb__list
   margin 2em 0 1em 0
+  md-block({
+    padding: 0 10px
+  })
   .guest__box
     .title
       font-size rem(24px)
       margin: 0 0 .5em 0
+      position: relative
+      &:after
+        position: absolute
+        height: 1px
+        left: 0
+        bottom: 0
+        width: 100%
+        background-color: $activeTextColor
+        content ""
     &-item
       margin 0 0 1em 0
       p

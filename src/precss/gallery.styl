@@ -47,3 +47,45 @@
         opacity 1
       .icon
         opacity 1
+.gallery__filter
+  text-align: center
+  margin 2em auto
+  ul
+    li
+      position: relative
+      display: inline-block
+      padding 8px 25px
+      margin: 0 .5em
+      xs-block({
+        margin: 0.2em 2em
+        display: block
+      })
+      &:not(.active)
+        xs-block({
+          display: none
+        })
+      &:hover
+        cursor: pointer
+      &:after
+        position: absolute
+        content ""
+        transition all .3s ease
+        transform skewX(-30deg)
+        left: 50%
+        width: 0
+        background-color: $activeTextColor
+        top: 0
+        height: 100%
+        z-index -1
+      &:before
+        display: none
+      &.active
+        color #ffffff
+        &:after
+          width: 100%
+          left: 0
+    &.is__opened
+      li
+        xs-block({
+          display: block
+        })

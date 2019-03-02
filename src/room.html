@@ -104,8 +104,16 @@
                                 <li><a href="#">Отзывы</a></li>
                                 <li><a href="#">Контакты</a></li>
                             </ul>
+                            <a href="tel:89787547499" class="phone__mob">
+                                <svg>
+                                    <use xlink:href="/img/symbols.svg#phone_mob"></use>
+                                </svg>
+                            </a>
                             <div class="btn btn__booking">
                                 Забронировать
+                            </div>
+                            <div class="burger-mob">
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -290,6 +298,7 @@
                 <div class="col-12">
                     <div class="content room__text">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque earum iste mollitia natus nemo nostrum omnis quibusdam! Consequatur ea eum ex fuga, magnam magni, nam nostrum perspiciatis repellendus repudiandae voluptas.</p>
+                        <div class="table__box">
                         <table class="price">
                             <thead>
                             <tr>
@@ -314,6 +323,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque earum iste mollitia natus nemo nostrum omnis quibusdam! Consequatur ea eum ex fuga, magnam magni, nam nostrum perspiciatis repellendus repudiandae voluptas.</p>
                     </div>
                 </div>
@@ -413,6 +423,50 @@
         </div>
     </footer>
 
+    <div class="mobile__menu">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about.html">О нас</a></li>
+            <li class="active has__child">
+                <a href="/catalog.html">Туры</a>
+                <span><i class="icon__arrow"></i></span>
+                <ul>
+                    <li><a href="#">Однодневные туры</a></li>
+                    <li><a href="#">Многодневные туры</a></li>
+                    <li><a href="#">Индивидуальные туры</a></li>
+                    <li><a href="#">Морские туры на каяках</a></li>
+                    <li><a href="#">Походы со спусками дюльфером</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="/articles.html">Блог</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="socials">
+            <a href="#">
+                <svg class="icon">
+                    <use xlink:href="/img/symbols.svg#vk"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon">
+                    <use xlink:href="/img/symbols.svg#fb"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon">
+                    <use xlink:href="/img/symbols.svg#ok"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon">
+                    <use xlink:href="/img/symbols.svg#insta"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="close-menu-btn"></div>
+        <div class="menu-overlay-mob"></div>
+    </div>
     <div class="loader__bg"></div><div class="notify"></div>
 
     <script src="js/jquery.3.3.1.min.js"></script>

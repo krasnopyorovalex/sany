@@ -11,12 +11,15 @@
     background-color: #c19b76
     width: 1px
     height: 100%
-    right: -13px
+    right: -6%
     z-index 10
     top: 0
     opacity 0
+    sm-block({
+      display: none
+    })
 .tabs>ul li.active, .tabs>ul li.active:hover
-  color:$activeTextColor
+  color: $activeTextColor
 .tabs>ul li.active
   &:after
     opacity 1
@@ -26,12 +29,14 @@
   row-flex()
   align-items stretch
   margin-bottom 1em
-  ul
+  >ul
     col()
     size(3)
+    size-sm(12)
 .tabs > div
   col()
   size(9)
+  size-sm(12)
   position: relative
   &:before
     background-color: #dadada
@@ -41,6 +46,9 @@
     position: absolute
     left: -1%
     right: 0
+    sm-block({
+      display: none
+    })
   > div
     padding 15px
     p

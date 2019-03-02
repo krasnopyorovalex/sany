@@ -4,7 +4,14 @@
   box-shadow 0 3px 7px rgba(133,133,133,.25)
   .middle__block
     border-left: 1px solid #eaeaea
+    md-block({
+      border: none
+    })
+    xs-block({
+      padding: 0 0 5px 0
+    })
   &__logo
+    text-align: center
     img
       width: auto
   &__contacts
@@ -13,6 +20,9 @@
     display: flex
     align-items center
     flex-wrap wrap
+    md-block({
+      display: none
+    })
     .icon
       vertical-align: top
       display: inline-block
@@ -31,6 +41,9 @@
       > div
         display: inline-block
         font-size rem(14px)
+        md-block({
+          display: block
+        })
         &:hover
           .icon:not(.icon__address)
             fill: $activeTextColor
@@ -45,23 +58,48 @@
           height: 18px
         & + div
           margin-left: 1em
+          md-block({
+            margin: 8px 0 0 0
+          })
   &__menu
     padding 0 0 0 1em
     border-top: 1px solid #eaeaea
     display: flex
     flex-wrap wrap
     align-items center
+    position: relative
+    md-block({
+      border: none
+    })
+    .phone__mob
+      display: none
+      svg
+        width: 28px
+        height: 28px
+        fill: #1c1c1c
+      md-block({
+        display: block
+      })
     .btn__booking
       padding 1em 25px
       text-transform: uppercase
+      md-block({
+        margin: 0 auto
+      })
+      xs-block({
+        padding: 8px 30px
+      })
     > ul
       flex-grow 1
       z-index 10
+      md-block({
+        display: none
+      })
       > li
         display: inline-block
         position: relative
         & + li
-          margin-left: 2em
+          margin-left: 1.4em
         &.has__child
           &:after
             content ""

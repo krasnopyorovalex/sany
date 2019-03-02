@@ -7,7 +7,7 @@
 
             showPage = function(i){
                 $(tabs).children("div").children("div").hide();
-                $(tabs).children("div").children("div").eq(i).fadeIn();
+                $(tabs).children("div").children("div").eq(i).fadeIn("fast");
                 $(tabs).children("ul").children("li").removeClass("active");
                 $(tabs).children("ul").children("li").eq(i).addClass("active");
             };

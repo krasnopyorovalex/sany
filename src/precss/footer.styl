@@ -2,17 +2,27 @@ footer
   padding 3em 0 1em 0
   background-color: $textColor
   color #fff
+  md-block({
+    padding: 0 0 1em 0
+  })
   .title
     font-size rem(26px)
+    md-block({
+      margin: 1em 0 10px 0
+    })
     &.right
       text-align: right
   .footer__socials
     text-align: right
+    md-block({
+      text-align: center
+    })
     .icon
       width: 18px
       height: 18px
-  [class*=col-]
+  .row [class*=col-]
     align-self flex-start
+    size-md(12)
   .flex-center
     [class*=col-]
       align-self center
@@ -46,8 +56,15 @@ footer
   .copyright
     text-align: left
     color: #858585
+    md-block({
+      text-align: center
+      margin: 0 auto 10px
+    })
   .develop
     text-align: right
+    md-block({
+      text-align: center
+    })
     &__link
       display: inline-block
       margin-right: 4px

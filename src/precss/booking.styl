@@ -2,12 +2,18 @@
   background-color: #7eb71c
   padding 1.5em 0
   .check__availability
+    .col-2,.col-10
+      size-lg(12)
     &-name
       font-family: 'Playfair Display'
       font-size rem(34px)
       color #fff
     .single__block
       vertical-align: bottom
+      md-block({
+        width: 100%
+        margin: 10px 0 0 0
+      })
       .icon__calendar
         fill: #fff
         width: 18px
@@ -25,17 +31,30 @@
         color #ffffff
         background-color: #71a519
         padding 10px
-        width: 185px
+        width: 165px
         outline none
+        md-block({
+          width: 100%
+        })
       .icon
         position: absolute
         bottom: 11px
         right: 8px
       & + .single__block
         margin-left: 5px
+        md-block({
+          margin-left: 0
+        })
       .date_in,.date_out
         width: 120px
+        md-block({
+          width: 100%
+        })
     .submit
+      text-align: center
+      md-size({
+        display: block
+      })
       button
         background-color: $textColor
         line-height normal

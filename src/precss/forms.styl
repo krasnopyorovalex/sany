@@ -100,7 +100,7 @@ select
   to
     transform: scale(1)
     opacity: 0
-.sb__booking-form
+.sb__booking-form,.sb__guest-form
   margin 2em 0
   border: 1px solid $activeTextColor
   .title
@@ -178,3 +178,84 @@ select
       height: 50px
     input::placeholder
       color $textDescColor
+.sb__booking-form
+  md-block({
+    display: none
+  })
+.main__booking-form
+  .form__body
+    padding 1em
+  .single__block
+    color: $textColor
+    margin: 10px 12px 0 0
+    display: inline-block
+    width: 31%
+    vertical-align: top
+    md-block({
+      width: 100%
+    })
+    &.message, &.i__agree, &.submit
+      display: block
+      width: 100%
+    &.message
+      width: calc(100% - 12px)
+      md-block({
+        width: 100%
+      })
+    &.i__agree
+      label
+        &:after
+          top: 5px
+        &:before
+          top: 0
+    label
+      margin: 0 0 5px 0
+    .icon__arrow
+      position: absolute
+      bottom: .7em
+      right: 6px
+      display: inline-block
+      sprite($icon_arrow_black)
+      transform rotate(180deg)
+    &.counts
+      >div
+        width: 100%
+        position: relative
+    &.submit
+      text-align: center
+      padding-top: 1em
+    &.date
+      display: inline-block
+      >div
+        position: relative
+        .icon__calendar
+          width: 18px
+          height: 18px
+          fill: #858585
+          position: absolute
+          right: 6px
+          bottom: 6px
+        &:nth-child(2)
+          margin-left: 15px
+    label
+      display: block
+      color $textDescColor
+      font-size rem(14px)
+    select
+      background-color: #fff
+      border-left none
+      border-top none
+      border-right: none
+      &:active,&:focus
+        //border none
+        background: none
+    select, input, textarea
+      outline none
+      border: 1px solid $activeTextColor
+      width: 100%
+      padding 5px
+    textarea
+      height: 140px
+    input::placeholder
+      color $textDescColor
+

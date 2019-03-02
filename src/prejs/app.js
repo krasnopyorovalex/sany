@@ -1,5 +1,27 @@
 jQuery(document).ready(function() {
 
+    var burgerMob = jQuery(".burger-mob");
+    if(burgerMob.length) {
+        var mobileMenu = jQuery(".mobile__menu"),
+            closeMenuBtn = jQuery(".close-menu-btn");
+        burgerMob.on("click", function () {
+            return mobileMenu.addClass("is__opened") && mobileMenu.fadeIn("fast");
+        });
+        closeMenuBtn.on("click", function () {
+            return mobileMenu.removeClass("is__opened") && mobileMenu.fadeOut();
+        });
+        mobileMenu.on("click", ".has__child > span", function (e) {
+            e.preventDefault();
+            var _this = jQuery(this);
+            if( _this.next('ul').is(':hidden') ) {
+                _this.next('ul').slideDown();
+            } else {
+                _this.next('ul').slideUp();
+            }
+            return false;
+        });
+    }
+
     var maskPhone = jQuery("form input.phone__mask");
     if (maskPhone.length) {
         maskPhone.mask('+0 (000) 000-00-00', {placeholder: "+_ (___) ___-__-__"});
@@ -83,7 +105,7 @@ jQuery(document).ready(function() {
         return jQuery(this).fadeOut();
     });
 
-    //jQuery("#sticky").sticky({topSpacing:0, zIndex: 20});
+    jQuery("#sticky").sticky({topSpacing:0, zIndex: 20});
 
     lightbox.option({
         'albumLabel': 'Изображение %1 из %2'
@@ -134,6 +156,20 @@ jQuery(document).ready(function() {
         return jQuery(this).closest('div').find('label').click();
     });
 
+    var galleryFilter = jQuery('.gallery__filter'),
+        galleryBox = jQuery('.gallery__box');
+    if(galleryFilter.length) {
+        galleryFilter.on('click', 'li', function () {
+            var _this = jQuery(this),
+                filter = _this.attr("data-filter");
+
+            if (filter) {
+                galleryBox.find("figure").hide().fadeIn().filter(":not(."+filter+")").hide();
+            }
+
+            return _this.addClass('active').siblings('li').removeClass('active') && _this.parent('ul').toggleClass('is__opened');
+        });
+    }
     /*
     |-----------------------------------------------------------
     |   notification

@@ -32,4 +32,25 @@
         top: 0
         left: -20px
         font-size: rem(40px)
-
+.guest__book-list
+  margin 2em 0
+  &-item
+    border 1px solid #eaeaea
+    padding 1em
+    box-shadow: 0 0 4px rgba(234,234,234,0.5)
+    & + .guest__book-list-item
+      margin 1em 0 0 0
+    .author
+      font-weight: bold
+      margin 0 0 1em 0
+      padding 0 0 1em 0
+      border-bottom 1px solid #eaeaea
+    .text
+      position: relative
+      display: inline-block
+      p
+        margin 0 0 10px 0
+.sb__guest-form
+  .single__block
+    textarea
+      height: 80px
